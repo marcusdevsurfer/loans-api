@@ -28,5 +28,10 @@ public class LoanServiceImpl implements LoanService {
         return loanRepository.save(loan);
     }
 
+    @Override
+    public void deleteTodo(Long todoId) {
+        loanRepository.deleteById(todoId);
+    }
+
 
 }

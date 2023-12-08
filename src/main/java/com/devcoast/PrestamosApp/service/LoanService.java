@@ -11,4 +11,6 @@ public interface LoanService {
     public List<Loan> getLoans();
     public Loan getLoanById(Long id);
     public Loan saveLoan(Loan loan);
+
+    void deleteTodo(Long todoId);
 }

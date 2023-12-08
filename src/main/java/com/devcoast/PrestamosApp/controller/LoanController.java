@@ -3,11 +3,12 @@ package com.devcoast.PrestamosApp.controller;
 import com.devcoast.PrestamosApp.model.Loan;
 import com.devcoast.PrestamosApp.service.LoanService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@CrossOrigin
+@CrossOrigin(value = "http://localhost:5173")
 @RestController
 public class LoanController {
     @Autowired
@@ -29,5 +30,13 @@ public class LoanController {
     @PostMapping("/loans")
     public Loan addLoan(@RequestBody Loan loan) {
         return loanService.saveLoan(loan);
+    }
+
+
+    // Build Delete Todo REST API
+    @DeleteMapping("/loans/{id}")
+    public ResponseEntity<String> deleteTodo(@PathVariable("id") Long todoId){
+        loanService.deleteTodo(todoId);
+        return ResponseEntity.ok("Todo deleted successfully!.");
     }
 }
