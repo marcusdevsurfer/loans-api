@@ -3,10 +3,7 @@ package com.devcoast.PrestamosApp.controller;
 import com.devcoast.PrestamosApp.model.Loan;
 import com.devcoast.PrestamosApp.service.LoanService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.ResponseStatus;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -26,5 +23,10 @@ public class LoanController {
             throw new RuntimeException("No se encontro a la persona");
         }
         return loanExpected;
+    }
+
+    @PostMapping("/loans")
+    public Loan addLoan(@RequestBody Loan loan) {
+        return loanService.saveLoan(loan);
     }
 }

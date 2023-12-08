@@ -7,36 +7,32 @@ import jakarta.persistence.*;
 public class Loan {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long loanid;
-
-    @ManyToOne
-    private Person person;
+    private Long loanId;
+    private String person;
     private double quantity;
-    private int porcent;
-
+    private int percent;
     public Loan() {
     }
 
-    public Loan(Long loanid, Person person, double quantity, int porcent) {
-        this.loanid = loanid;
+    public Loan(String person, double quantity, int percent) {
         this.person = person;
         this.quantity = quantity;
-        this.porcent = porcent;
+        this.percent = percent;
     }
 
     public Long getLoanId() {
-        return loanid;
+        return loanId;
     }
 
     public void setLoanId(Long loanId) {
-        this.loanid = loanId;
+        this.loanId = loanId;
     }
 
-    public Person getPerson() {
+    public String getPerson() {
         return person;
     }
 
-    public void setPerson(Person person) {
+    public void setPerson(String person) {
         this.person = person;
     }
 
@@ -48,11 +44,11 @@ public class Loan {
         this.quantity = quantity;
     }
 
-    public int getPorcent() {
-        return porcent;
+    public int getPercent() {
+        return percent;
     }
 
-    public void setPorcent(int porcent) {
-        this.porcent = porcent;
+    public void setPercent(int percent) {
+        this.percent = percent;
     }
 }

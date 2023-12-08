@@ -10,6 +10,7 @@ import java.util.List;
 
 @Service
 public class LoanServiceImpl implements LoanService {
+
     @Autowired
     LoanRepository loanRepository;
     @Override
@@ -21,5 +22,11 @@ public class LoanServiceImpl implements LoanService {
     public Loan getLoanById(Long id) {
         return loanRepository.findById(id).orElse(new Loan());
     }
+
+    @Override
+    public Loan saveLoan(Loan loan) {
+        return loanRepository.save(loan);
+    }
+
 
 }
