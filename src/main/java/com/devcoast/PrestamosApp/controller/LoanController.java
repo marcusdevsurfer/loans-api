@@ -7,11 +7,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
-//CORS PROD
-//"https://marcusdevsurfer.github.io/"
-//CORS DEV
-//http://localhost:5173/
-
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
 public class LoanController {
