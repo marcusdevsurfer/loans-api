@@ -5,10 +5,14 @@ import com.devcoast.PrestamosApp.service.LoanService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
-@CrossOrigin(value = "https://marcusdevsurfer.github.io/")
+//CORS PROD
+//"https://marcusdevsurfer.github.io/"
+//CORS DEV
+//http://localhost:5173/
+
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
 public class LoanController {
     @Autowired
