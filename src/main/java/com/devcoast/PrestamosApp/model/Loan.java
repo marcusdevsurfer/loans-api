@@ -11,13 +11,15 @@ public class Loan {
     private String person;
     private double quantity;
     private int percent;
+    private String user;
     public Loan() {
     }
 
-    public Loan(String person, double quantity, int percent) {
+    public Loan(String person, double quantity, int percent, String user) {
         this.person = person;
         this.quantity = quantity;
         this.percent = percent;
+        this.user = user;
     }
 
     public Long getLoanId() {
@@ -50,5 +52,13 @@ public class Loan {
 
     public void setPercent(int percent) {
         this.percent = percent;
+    }
+
+    public String getUser() {
+        return user;
+    }
+
+    public void setUser(String user) {
+        this.user = user;
     }
 }
