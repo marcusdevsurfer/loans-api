@@ -3,6 +3,7 @@ package com.devcoast.PrestamosApp.controller;
 import com.devcoast.PrestamosApp.model.Loan;
 import com.devcoast.PrestamosApp.service.LoanService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
@@ -12,9 +13,9 @@ import java.util.List;
 public class LoanController {
     @Autowired
     LoanService loanService;
-    @GetMapping("/loans")
-    public List<Loan> getLoans() {
-        return loanService.getLoans();
+    @GetMapping("/api/v1/loans")
+    public ResponseEntity<List<Loan>> getLoans() {
+        return new ResponseEntity<>(loanService.getLoans(), HttpStatus.OK);
     }
 
     @GetMapping("/loans/{id}")
